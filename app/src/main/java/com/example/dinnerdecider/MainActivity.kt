@@ -14,12 +14,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*
+        * trigger to get food decision
+        * */
         decideBtn.setOnClickListener {
             val random = Random()
             val randomFood = random.nextInt(foodList.count())
             selectedFoodTxt.text = foodList[randomFood]
         }
-
+        /*
+        * trigger to add item on foodlist
+        * */
         addFoodBtn.setOnClickListener {
             val newFood = addFoodTxt.text.toString()
             if (newFood != ""){
